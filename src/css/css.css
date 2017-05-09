@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+.header-text li a{
+    color:#666!important;
+}
+.no-con:before{content:''!important;}
+.top-menu{
+    list-style: none;
+    float:left;
+    margin:0;
+    padding:0;
+    height:80px;
+}
+.top-menu a{
+    color:#fff;
+    display: block;
+    height: 60px;
+}
+.top-menu li{
+    list-style: none;
+    float:left;
+    margin:10px 0 10px 15px;
+    height:60px;
+    padding:0 8px;
+    text-align: center;
+}
+.top-menu li i{
+    font-size: 24px;
+    margin-top: 6px;
+}
+.top-menu li.active{
+    border-radius: 6px;
+    box-shadow: 0 0 5px white;
+}
+.top-menu li span{
+    display:block;
+}
+.content-header:after{
+    display: block;
+    height: 0;
+    content: '';
+    clear: both;
+}

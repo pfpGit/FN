@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>泛能科技_风力发电预测</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../bootstrap/Font-Awesome-4.7.0/css/font-awesome.min.css"/>
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../bootstrap/ionicons-2.0.1/css/ionicons.min.css"/>
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../dist/css/skins/skin-blue-light.min.css">
+    <link rel="stylesheet" href="../../src/css/views.css"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="inner-body">
+<div class="container-fluid p-tb">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="" class="iblock">
+                <div class="form-group">
+                    <label>日期:</label>
+                    <input type="text" class="form-control datepicker" placeholder="开始时间">至
+                    <input type="text" class="form-control datepicker" placeholder="结束时间">
+                </div>
+                <div class="form-group">
+                    <label>发电单元:</label>
+                    <select class="form-control">
+                        <option value="">请选择设备</option>
+                        <option value="1">A1</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>预测尺度:</label>
+                    <select class="form-control">
+                        <option value="">请选择设备</option>
+                        <option value="1">短期</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-info btn-sm">查询</button>
+
+            </form>
+        </div>
+        <div class="col-md-8">
+            <div id="chart" style="height: 300px;"></div>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-border">
+                <tr>
+                    <th>时间</th>
+                    <th>实测功率</th>
+                </tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+                <tr><td>2015-12-24 17:00</td><td>2458</td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="../../plugins/echarts-2.2.7/dist/echarts-all.js"></script>
+<script>
+$(function(){
+    $(".datepicker").datepicker({
+        language: "zh-CN",
+        autoclose: true,//选中之后自动隐藏日期选择框
+        format: "yyyy-mm-dd"
+    });
+
+    var myChart = echarts.init(document.getElementById('chart'));
+    var option = {
+        tooltip : {
+            trigger: 'axis',
+            padding: 10,
+            formatter: function (params,ticket,callback) {
+                var res = '';
+                for (var i = 0, l = params.length; i < l; i++) {
+                    res += params[i].seriesName + ' : ' + params[i].value+" kWh<br/>";
+                }
+                return res;
+            }
+        },
+        legend: {
+            data:['数值一','数值二','数值三','数值四','数值五']
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap : false,
+                data : ['6:00','8:00','10:00','12:00','14:00','16:00','18:00'],
+                axisLabel : {
+                    margin: 18,
+                    formatter: '{value} 点',    // Template formatter!
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                axisLabel : {
+                    rotate: -45,
+                    margin: 18,
+                    formatter: '{value} kWh',    // Template formatter!
+                }
+            }
+        ],
+        series : [
+            {
+                name:'数值一',
+                type:'line',
+                stack: '总量',
+                data:[120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name:'数值二',
+                type:'line',
+                stack: '总量',
+                data:[220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name:'数值三',
+                type:'line',
+                stack: '总量',
+                data:[150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name:'数值四',
+                type:'line',
+                stack: '总量',
+                data:[320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name:'数值五',
+                type:'line',
+                stack: '总量',
+                data:[820, 932, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+    };
+
+    myChart.setOption(option);
+})
+</script>
+</body>
+</html>

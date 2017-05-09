@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>泛能科技</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bootstrap/Font-Awesome-4.7.0/css/font-awesome.min.css"/>
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bootstrap/ionicons-2.0.1/css/ionicons.min.css"/>
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/skins/skin-blue-light.min.css">
+  <link rel="stylesheet" href="src/css/index.css"/>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue-light sidebar-mini">
+
+<header class="main-header" style="z-index:1111">
+  <nav class="navbar navbar-static-top" style="margin-left:0;background:white;">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="javascript:void()" style="margin:4px 15px;display:block;"><img src="src/images/logo.png" alt="" style="height:42px;"></a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse text-center" id="navbar-collapse">
+      <div class="header-title">智慧能源监控中心</div>
+      <div class="nav navbar-nav navbar-right header-text">
+        <div class="login-info">2016年10月22日<span class="info-week">星期日</span>您已登录1小时53分钟</div>
+        <div class="base-info">
+          <span class="info-br">您好jame</span>
+          <span>退出</span>
+          <ul class="nav drop">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="views/header/user-info.html" target="main">个人信息</a></li>
+                <li><a href="views/header/modify-psd.html" target="main">修改密码</a></li>
+                <li><a href="views/header/maibox.html" target="main">预警邮箱</a></li>
+                <li><a href="views/header/user-info.html" target="main">操作说明</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown"><i class="fa fa-sitemap"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">电站列表1</a></li>
+                <li><a href="#">电站列表2</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown"><i class="fa fa-envelope"></i> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">推送信息1</a></li>
+                <li><a href="#">推送信息2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</header>
+
+<div class="wrapper">
+  <header class="main-header">
+
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation" style="margin-left:0;background:#444;height:80px;">
+
+      <ul id="topMenu" class="top-menu pull-left">
+        <li class="active"><a href="javascript:void(0);"><i class="fa fa-home"></i><span>电站选择</span></a></li>
+        <li><a href="javascript:void(0);"><i class="fa fa-building-o"></i><span>电站总览</span></a></li>
+        <li><a href="javascript:void(0);"><i class="fa fa-area-chart"></i><span>实时监控</span></a></li>
+        <li><a href="javascript:void(0);"><i class="fa fa-pie-chart"></i><span>数据分析</span></a></li>
+        <li><a href="javascript:void(0);"><i class="fa fa-window-restore"></i><span>远程控制</span></a></li>
+        <li><a href="javascript:void(0);"><i class="fa fa-info-circle"></i><span>告警查询</span></a></li>
+        <li><a href="javascript:void(0);"><i class="fa fa-user"></i><span>增值服务</span></a></li>
+      </ul>
+
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu" style="margin-top:25px;">
+        <ul class=" navbar-nav dev-info">
+          <li><a href="#" ><i class="fa fa-close icon1"></i>0</a> </li>
+          <li><a href="#" ><i class="fa fa-question-circle icon2"></i>0</a></li>
+          <li><a href="#" ><i class="fa fa-warning icon3"></i>0</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div id="mainWrap" style="font-size: 0;">
+    <iframe id="main" name="main" src="views/main.html" frameborder="0" data-index="0" style="width: 100%;"></iframe>
+  </div>
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/app.min.js"></script>
+<script>
+  $(function(){
+
+    setHeight();
+    $(window).resize(setHeight);
+
+    $('#topMenu').on('click','li',function(){
+      var me = $(this);
+      $('#main').attr({'data-index':me.index(),'src':'views/main.html'});
+      me.addClass('active').siblings().removeClass('active');
+
+    });
+
+    function setHeight(){
+      var wrap = $('#mainWrap'),
+              me =  $('#main'),
+              wrapH = wrap.offset().top;
+      me.height($(window).height() - wrapH );
+    }
+  })
+</script>
+</body>
+</html>
